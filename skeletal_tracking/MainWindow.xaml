@@ -1,0 +1,144 @@
+﻿<Window x:Class="skeletal_tracking.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:k="http://schemas.microsoft.com/kinect/2013"
+        xmlns:local="clr-namespace:skeletal_tracking"
+        mc:Ignorable="d"
+        Title="KinectMusic" Height="1080" Width="1920">
+    <Grid>
+        <k:KinectSensorChooserUI HorizontalAlignment="Center" VerticalAlignment="Top" Name="sensorChooserUi" Margin="25.383,0,396.6,0" Grid.Column="1" />
+        <Canvas Name="canvas" Visibility="Hidden">
+            <Polygon Name="ArrowLeftUp" Points="150,20 0,400 300,400 150,20" Stroke="Purple" StrokeThickness="8" Fill="Gold" Canvas.Left="378" Canvas.Top="48"/>
+            <Polygon Name="ArrowRightUp" Points="150,20 0,400 300,400 150,20" Stroke="Purple" StrokeThickness="8" Fill="Gold" Canvas.Left="1192" Canvas.Top="54"/>
+            <Polygon Name="ArrowLeftDown" Points="150,20 0,400 300,400 150,20" Stroke="Purple" StrokeThickness="8" Fill="Gold" RenderTransformOrigin="0.5,0.5" Canvas.Top="576" Canvas.Left="374">
+                <Polygon.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="180"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Polygon.RenderTransform>
+            </Polygon>
+            <Polygon Name="ArrowRightDown" Points="150,20 0,400 300,400 150,20" Stroke="Purple" StrokeThickness="8" Fill="Gold" Canvas.Top="576" Canvas.Left="1190" RenderTransformOrigin="0.5,0.5">
+                <Polygon.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="180.132"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Polygon.RenderTransform>
+            </Polygon>
+
+            <Polygon Points="0,0 0,900 1750,900 1750,0" Stroke="Black" StrokeThickness="15" Canvas.Left="82" HorizontalAlignment="Center" VerticalAlignment="Center" Canvas.Top="62"/>
+            <Polygon Name="SongFrame" Points="0,0 0,200 305,200 305,0" Stroke="LimeGreen" StrokeThickness="15" Fill="White" Canvas.Left="812" HorizontalAlignment="Center" VerticalAlignment="Center" Canvas.Top="602" Visibility="Hidden"/>
+            <TextBlock Height="87" Name ="TitleIntestation" Foreground="LimeGreen" Canvas.Left="866" TextWrapping="Wrap" FontSize="35" TextAlignment =" Center" Canvas.Top="612" Width="200" Visibility="Hidden"><Run FontWeight="Bold" Text="Track Playing:"/></TextBlock>
+            <TextBlock Height="87" Name ="SongTitle" Foreground="LimeGreen" Canvas.Left="866" TextWrapping="Wrap" FontSize="32" TextAlignment =" Center" Canvas.Top="715" Width="200" Visibility="Hidden"><Run Name="SongName" Text="TITLE"/></TextBlock>
+            <Image Height="176" Name="Logo" Source="spotify_logo.png" Stretch="Fill" Width="212" Canvas.Left="866" Canvas.Top="309" Visibility="Hidden"/>
+            <Ellipse Name="BlueCircle" Fill="SteelBlue" Stroke ="Black" StrokeThickness ="10" Height="50" Width="50"/>
+            <Ellipse Name="RedCircle" Fill="Salmon" Stroke ="Black" StrokeThickness ="10" Height="50" Width="50"/>
+
+            <TextBlock Height="69" Canvas.Left="1242" TextWrapping="Wrap" FontSize="50" TextAlignment =" Center" Canvas.Top="484" Width="220"><Run FontWeight="Bold" Text="PITCH"/></TextBlock>
+            <TextBlock Height="70" Canvas.Left="420" TextWrapping="Wrap" FontSize="50" TextAlignment =" Center" Canvas.Top="475" Width="223"><Run FontWeight="Bold" Text="VOLUME"/></TextBlock>
+        </Canvas>
+        <k:KinectRegion Name="kinectRegion" Margin="0,0,-0.4,0" Grid.ColumnSpan="2" Visibility="Visible">
+            <Grid>
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="1*" />
+                    <RowDefinition Height="1.5*" />
+                    <RowDefinition Height="1*" />
+                </Grid.RowDefinitions>
+
+                <Canvas>
+                    <Rectangle Fill ="White" Width="1920" Height="1080" Stroke="Blue" StrokeThickness="5"/>
+                    <Rectangle Fill ="ForestGreen" Width="104" Height="22" Canvas.Left="470" Canvas.Top="704" />
+                    <Rectangle Fill ="Orange" Width="104" Height="22" Canvas.Left="470" Canvas.Top="678" />
+                    <Rectangle Fill ="DarkOrange" Width="104" Height="22" Canvas.Left="470" Canvas.Top="652" />
+                    <Rectangle Fill ="SandyBrown" Width="104" Height="22" Canvas.Left="470" Canvas.Top="626" />
+                    <Rectangle Fill ="OrangeRed" Width="104" Height="22" Canvas.Left="470" Canvas.Top="600" />
+                    <Rectangle Fill ="Red" Width="104" Height="22" Canvas.Left="470" Canvas.Top="574" />
+                    <Rectangle Fill ="MediumVioletRed" Width="104" Height="22" Canvas.Left="470" Canvas.Top="548" />
+                    <Rectangle Fill ="ForestGreen" Width="104" Height="22" Canvas.Left="626" Canvas.Top="704" />
+                    <Rectangle Fill ="Orange" Width="104" Height="22" Canvas.Left="626" Canvas.Top="678" />
+                    <Rectangle Fill ="DarkOrange" Width="104" Height="22" Canvas.Left="626" Canvas.Top="652" />
+                    <Rectangle Fill ="SandyBrown" Width="104" Height="22" Canvas.Left="626" Canvas.Top="626" />
+                    <Rectangle Fill ="OrangeRed" Width="104" Height="22" Canvas.Left="626" Canvas.Top="600" />
+                    <Rectangle Fill ="ForestGreen" Width="104" Height="22" Canvas.Left="774" Canvas.Top="704" />
+                    <Rectangle Fill ="ForestGreen" Width="105" Height="22" Canvas.Left="912" Canvas.Top="704" />
+                    <Rectangle Fill ="Orange" Width="105" Height="22" Canvas.Left="912" Canvas.Top="678" />
+                    <Rectangle Fill ="DarkOrange" Width="105" Height="22" Canvas.Left="912" Canvas.Top="652" />
+                    <Rectangle Fill ="ForestGreen" Width="105" Height="22" Canvas.Left="1194" Canvas.Top="704" />
+                    <Rectangle Fill ="Orange" Width="105" Height="22" Canvas.Left="1194" Canvas.Top="678" />
+                    <Rectangle Fill ="DarkOrange" Width="105" Height="22" Canvas.Left="1194" Canvas.Top="652" />
+                    <Rectangle Fill ="SandyBrown" Width="105" Height="22" Canvas.Left="1194" Canvas.Top="626" />
+                    <Rectangle Fill ="OrangeRed" Width="105" Height="22" Canvas.Left="1194" Canvas.Top="600" />
+                    <Rectangle Fill ="Red" Width="105" Height="22" Canvas.Left="1194" Canvas.Top="574" />
+                    <Rectangle Fill ="MediumVioletRed" Width="105" Height="22" Canvas.Left="1194" Canvas.Top="548" />
+                    <Rectangle Fill ="ForestGreen" Width="104" Height="22" Canvas.Left="1329" Canvas.Top="704" />
+                    <Rectangle Fill ="Orange" Width="104" Height="22" Canvas.Left="1329" Canvas.Top="678" />
+                    <Rectangle Fill ="DarkOrange" Width="104" Height="22" Canvas.Left="1329" Canvas.Top="652" />
+                    <Rectangle Fill ="ForestGreen" Width="105" Height="22" Canvas.Left="1060" Canvas.Top="704" />
+                    <Rectangle Fill ="Orange" Width="105" Height="22" Canvas.Left="1060" Canvas.Top="678" />
+                </Canvas>
+
+                <Label Grid.Row="0" Content="Source" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="80"/>
+                <k:KinectScrollViewer Name="SourceSetter" Grid.Row="1" VerticalScrollBarVisibility="Disabled" HorizontalScrollBarVisibility="Auto" HorizontalAlignment="Center" VerticalAlignment="Top">
+                    <StackPanel Orientation="Horizontal" Name="scrollContent">
+                        <k:KinectCircleButton Label="File" Name="FileButton" HorizontalAlignment="Right" Width="200" Click="KinectCircleButton_Click_1"></k:KinectCircleButton>
+                        <k:KinectCircleButton Label="Mic" Name="MicButton" HorizontalAlignment="Right" Width="200" Click="KinectCircleButton_Mic"></k:KinectCircleButton>
+                        <k:KinectCircleButton Label="Sine" Name="SineButton" HorizontalAlignment="Right" Width="200" Click="KinectCircleButton_Click"></k:KinectCircleButton>
+                        <k:KinectCircleButton Label="Trig" Name="TrigButton" HorizontalAlignment="Right" Width="200" Click="KinectCircleButton_Click"></k:KinectCircleButton>
+                        <k:KinectCircleButton Label="Squa" Name="SquaButton" HorizontalAlignment="Right" Width="200" Click="KinectCircleButton_Click"></k:KinectCircleButton>
+                        <k:KinectCircleButton Label="Saw" Name="SawButton" HorizontalAlignment="Right" Width="200" Click="KinectCircleButton_Click"></k:KinectCircleButton>
+                        <k:KinectCircleButton Label="Spotify" Name="SpotifyButton" HorizontalAlignment="Right" Width="200" Click="KinectCircleButton_Spotify"></k:KinectCircleButton>
+                    </StackPanel>
+                </k:KinectScrollViewer>
+                <GroupBox Background="AliceBlue" Grid.Row="1" Name="FrequencyController" Visibility="Hidden">
+                    <Grid>
+                        <Label Content="Wave Frequency (Hz)" HorizontalAlignment="Center" FontSize="40" VerticalAlignment="Top"/>
+                        <k:KinectScrollViewer VerticalScrollBarVisibility="Disabled" HorizontalScrollBarVisibility="Auto" HorizontalAlignment="Center" VerticalAlignment="Center">
+                            <StackPanel Orientation="Horizontal" Name="scrollFrequency">
+                                <k:KinectCircleButton Name="C4" HorizontalAlignment="Right" Width="200" Click="ButtonSetFrequency">C4</k:KinectCircleButton>
+                                <k:KinectCircleButton Name="C_4" HorizontalAlignment="Right" Width="200" Click="ButtonSetFrequency">C#4</k:KinectCircleButton>
+                                <k:KinectCircleButton Name="D4" HorizontalAlignment="Right" Width="200" Click="ButtonSetFrequency">D4</k:KinectCircleButton>
+                                <k:KinectCircleButton Name="D_4" HorizontalAlignment="Right" Width="200" Click="ButtonSetFrequency">D#4</k:KinectCircleButton>
+                                <k:KinectCircleButton Name="E4" HorizontalAlignment="Right" Width="200" Click="ButtonSetFrequency">E4</k:KinectCircleButton>
+                                <k:KinectCircleButton Name="F4" HorizontalAlignment="Right" Width="200" Click="ButtonSetFrequency">F4</k:KinectCircleButton>
+                                <k:KinectCircleButton Name="F_4" HorizontalAlignment="Right" Width="200" Click="ButtonSetFrequency">F#4</k:KinectCircleButton>
+                                <k:KinectCircleButton Name="G4" HorizontalAlignment="Right" Width="200" Click="ButtonSetFrequency">G4</k:KinectCircleButton>
+                                <k:KinectCircleButton Name="G_4" HorizontalAlignment="Right" Width="200" Click="ButtonSetFrequency">G#4</k:KinectCircleButton>
+                                <k:KinectCircleButton Name="A4" HorizontalAlignment="Right" Width="200" Click="ButtonSetFrequency">A4</k:KinectCircleButton>
+                                <k:KinectCircleButton Name="A_4" HorizontalAlignment="Right" Width="200" Click="ButtonSetFrequency">A#4</k:KinectCircleButton>
+                                <k:KinectCircleButton Name="B4" HorizontalAlignment="Right" Width="200" Click="ButtonSetFrequency">B_4</k:KinectCircleButton>
+                            </StackPanel>
+                        </k:KinectScrollViewer>
+                    </Grid>
+                </GroupBox>
+
+                <GroupBox Background="AliceBlue" Grid.Row="1" Name="SpotifyController" Visibility="Hidden">
+                    <Grid>
+                        <Label Content="Spotify Controller" HorizontalAlignment="Center" FontSize="40" VerticalAlignment="Top"/>
+                        <k:KinectScrollViewer VerticalScrollBarVisibility="Disabled" HorizontalScrollBarVisibility="Auto" HorizontalAlignment="Center" VerticalAlignment="Center">
+                            <StackPanel Orientation="Horizontal">
+                                <k:KinectCircleButton Name="Back" HorizontalAlignment="Right" Width="200" Click="ButtonPrevious">&lt;&lt;</k:KinectCircleButton>
+                                <k:KinectCircleButton Name="Play" HorizontalAlignment="Right" Width="200" Click="ButtonPlay">Play</k:KinectCircleButton>
+                                <k:KinectCircleButton Name="Pause" HorizontalAlignment="Right" Width="200" Click="ButtonPause">||</k:KinectCircleButton>
+                                <k:KinectCircleButton Name="Forward" HorizontalAlignment="Right" Width="200" Click="ButtonNext">&gt;&gt;</k:KinectCircleButton>
+                            </StackPanel>
+                        </k:KinectScrollViewer>
+                    </Grid>
+                </GroupBox>
+
+                <TextBox Height="32" Grid.Row="1" HorizontalAlignment="Center" Margin="6,10,0,0" Name="FileNameTextBox" VerticalAlignment="Top" Width="393" Visibility="Hidden"/>
+                <Button Content="Browse" Grid.Row="1" Height="32" HorizontalAlignment="Center" Margin="405,10,0,0" Name="button1" VerticalAlignment="Top" Width="88" Click="browse_Click" Visibility="Hidden"/>
+
+                <k:KinectTileButton Grid.Row="2" Label="Interact!" HorizontalAlignment="Center" Click="Interact_Click"></k:KinectTileButton>
+            </Grid>
+        </k:KinectRegion>
+        <k:KinectUserViewer Name="kinectUserViewer" VerticalAlignment="Bottom" HorizontalAlignment="Right" k:KinectRegion.KinectRegion="{Binding ElementName=kinectRegion}" Height="100" Margin="0,0,-0.4,0" Grid.Column="1" />
+    </Grid>
+</Window>

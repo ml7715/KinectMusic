@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27428.2015
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "skeletal_tracking", "skeletal_tracking\skeletal_tracking.csproj", "{8C866614-D5C5-4B3C-B8BB-6629E7CC8124}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|x64 = Debug|x64
+		Release|Any CPU = Release|Any CPU
+		Release|x64 = Release|x64
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8C866614-D5C5-4B3C-B8BB-6629E7CC8124}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8C866614-D5C5-4B3C-B8BB-6629E7CC8124}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8C866614-D5C5-4B3C-B8BB-6629E7CC8124}.Debug|x64.ActiveCfg = Debug|x64
+		{8C866614-D5C5-4B3C-B8BB-6629E7CC8124}.Debug|x64.Build.0 = Debug|x64
+		{8C866614-D5C5-4B3C-B8BB-6629E7CC8124}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8C866614-D5C5-4B3C-B8BB-6629E7CC8124}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8C866614-D5C5-4B3C-B8BB-6629E7CC8124}.Release|x64.ActiveCfg = Release|x64
+		{8C866614-D5C5-4B3C-B8BB-6629E7CC8124}.Release|x64.Build.0 = Release|x64
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E23E3FDC-7B54-4ABF-8E8E-5FE1C3ED9AD6}
+	EndGlobalSection
+EndGlobal
